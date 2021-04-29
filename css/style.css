@@ -1,0 +1,455 @@
+@charset "UTF-8";
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("../images/bg.png");
+  font-size: 14px;
+  color: #5c605a;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  position: relative;
+  cursor: none;
+}
+
+body .cursor {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: none;
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(132, 160, 105, 0.8);
+  z-index: 1001;
+}
+
+body .is-active {
+  -webkit-transition: -webkit-transform ease .2s;
+  transition: -webkit-transform ease .2s;
+  transition: transform ease .2s;
+  transition: transform ease .2s, -webkit-transform ease .2s;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #5c605a;
+  cursor: none;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 3em;
+}
+
+header {
+  position: relative;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .container .box {
+  display: block;
+  width: 20%;
+  height: 100px;
+  background-color: #666;
+}
+
+header .container h1 {
+  margin: 20px 0 20px 20px;
+}
+
+header .container p {
+  font-size: 12px;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  right: 5px;
+}
+
+header .nav {
+  position: absolute;
+  left: 60px;
+  top: 100px;
+  padding-top: 60px;
+}
+
+header .nav li {
+  margin-bottom: 40px;
+}
+
+header .is-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.sliderbox {
+  position: relative;
+  margin: 0 0 200px 20%;
+}
+
+.sliderbox img {
+  height: calc(100vh - 100px);
+}
+
+/*スクロールダウン全体の場所*/
+.scrolldown {
+  /*描画位置*/
+  position: absolute;
+  right: 8%;
+  bottom: 15px;
+  /*全体の高さ*/
+  height: 50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown span {
+  /*描画位置*/
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  /*テキストの形状*/
+  color: #333;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown::after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  top: 0;
+  /*線の形状*/
+  width: 2px;
+  height: 80px;
+  background: #333;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+  -webkit-animation: pathmove 1.2s ease-in-out infinite;
+          animation: pathmove 1.2s ease-in-out infinite;
+  opacity: 0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@-webkit-keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 45px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 45px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+.main section {
+  margin-bottom: 200px;
+}
+
+.main section .inner {
+  max-width: 1000px;
+  margin: 0 auto 0 20%;
+}
+
+.main section .inner .center {
+  text-align: center;
+}
+
+.main section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main section .container .item {
+  width: calc(100% / 2);
+}
+
+.main section .container .item img {
+  width: 100%;
+}
+
+.main #concept h2, .main #information h2 {
+  margin-top: 50px;
+}
+
+.main #concept p, .main #information p {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.main #concept {
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.main #concept img {
+  width: 100%;
+}
+
+.main #concept.on {
+  opacity: 1;
+}
+
+.main #information {
+  opacity: 0;
+}
+
+.main #information img {
+  width: 100%;
+}
+
+.main #information h2 {
+  width: 60%;
+  margin: 150px auto 30px;
+}
+
+.main #information.on {
+  opacity: 1;
+}
+
+.main #contact {
+  opacity: 0;
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+.main #contact h2 {
+  margin-bottom: 80px;
+}
+
+.main #contact .container {
+  width: 100%;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main #contact .container .item {
+  margin-bottom: 40px;
+  width: auto;
+}
+
+.main #contact .container .inner {
+  width: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main #contact .container .inner img {
+  width: auto;
+  margin-right: 20px;
+}
+
+.main #contact .container .inner address {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.main #contact p {
+  text-align: center;
+}
+
+.main #contact.on {
+  opacity: 1;
+}
+
+.main .menu .menu-image {
+  width: 80%;
+}
+
+.main .menu .menu-image img {
+  width: 100%;
+}
+
+.main .menu .box {
+  background-color: #666;
+  width: 20%;
+  height: 100px;
+  position: relative;
+  top: 0;
+  left: 80%;
+}
+
+.main .menu .inner {
+  opacity: 0;
+}
+
+.main .menu .inner h2 {
+  margin-bottom: 10px;
+}
+
+.main .menu .inner #menu {
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+.main .menu .inner p {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.main .menu .inner .container {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .menu .inner .item {
+  width: 40%;
+}
+
+.main .menu .inner ul li {
+  line-height: 2em;
+}
+
+.main .menu .inner ul li span {
+  float: right;
+}
+
+.main .menu .inner.on {
+  opacity: 1;
+}
+
+.main #staff {
+  opacity: 0;
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+.main #staff h2 {
+  margin-bottom: 80px;
+}
+
+.main #staff .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main #staff .container .item {
+  width: calc(100% / 3.2);
+}
+
+.main #staff .container .item figure img {
+  margin-bottom: 20px;
+}
+
+.main #staff .container .item figure figcaption {
+  line-height: 2em;
+}
+
+.main #staff.on {
+  opacity: 1;
+}
+
+.main .access {
+  margin-bottom: 20px;
+}
+
+.main .access .access-image {
+  width: 70%;
+  position: relative;
+  top: 0;
+  left: 30%;
+}
+
+.main .access .access-image img {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.main .access .inner {
+  opacity: 0;
+  margin-left: 0;
+}
+
+.main .access .inner h2 {
+  margin-bottom: 60px;
+}
+
+.main .access .inner .item {
+  font-size: 16px;
+}
+
+.main .access .inner .item address {
+  line-height: 2em;
+}
+
+.main .access .inner .item p {
+  line-height: 2em;
+}
+
+.main .access .inner.on {
+  opacity: 1;
+}
+
+footer {
+  width: 100vw;
+  height: 400px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#84a069), to(transparent));
+  background: linear-gradient(to top, #84a069, transparent);
+  position: relative;
+}
+
+footer img {
+  position: absolute;
+  top: 200px;
+  left: 10%;
+}
+
+footer .fa-instagram {
+  position: absolute;
+  top: 210px;
+  right: 10%;
+  font-size: 35px;
+  color: #fff;
+}
+
+footer p {
+  position: absolute;
+  top: 270px;
+  left: 10%;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
