@@ -1,0 +1,261 @@
+// Responsive Scss Document
+
+//設定
+$square-box-color: #666;
+$font-color: #5c605a;
+$main-color: #84a069;
+
+
+@media screen and (max-width:599px) {
+
+
+  //共通
+  body {
+    .cursor {
+      display: none;
+    }
+  }
+
+  //ヘッダー
+  header {
+    position: relative;
+    .container {
+      display: flex;
+      .box {
+        display: block;
+        width: 15%;
+        height: 100px;
+        background-color: $square-box-color;
+      }
+      h1 {
+        margin: 20px 0 20px 20px;
+      }
+      p {
+        display: none;
+      }
+    }
+    .nav {
+      display: none;
+    }
+  }
+  .sliderbox {
+    position: relative;
+    margin: 0 0 100px 15%;
+    img {
+      height: calc(100vh - 100px);
+    }
+  }
+    /*スクロールダウン全体の場所*/
+    .scrolldown{
+      /*描画位置*/
+      position: absolute;
+      right: 15%;
+      bottom: 15px;
+      /*全体の高さ*/
+      height: 50px;
+    }
+
+    /*Scrollテキストの描写*/
+    .scrolldown span{
+      /*描画位置*/
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      /*テキストの形状*/
+      color: #333;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* 線の描写 */
+    .scrolldown::after{
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      top: 0;
+      /*線の形状*/
+      width: 2px;
+      height: 80px;
+      background: #333;
+      /*線の動き1.4秒かけて動く。永遠にループ*/
+      animation: pathmove 1.2s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    /*高さ・位置・透過が変化して線が上から下に動く*/
+    @keyframes pathmove{
+      0%{
+        height: 0;
+        top: 0;
+        opacity: 0;
+      }
+      30%{
+        height: 45px;
+        opacity: 1;
+      }
+      100%{
+        height: 0;
+        top: 50px;
+        opacity: 0;
+      }
+    }
+
+
+
+  //メイン
+  .main {
+    section {
+      margin-bottom: 100px;
+      .inner {
+        width: 80%;
+        margin: 0 auto 0;
+      }
+      .container {
+        display: block;
+        .item {
+          width: 100%;
+        }
+      }
+    }
+    #concept,#information {
+      h2 {
+        margin-top: 0;
+      }
+      p {
+        width: 90%;
+        margin: 0 auto 50px;
+      }
+    }
+    
+    //コンセプト
+    #concept {
+      margin-bottom: 0;
+      img {
+        margin-bottom: 20px;
+      }
+    }
+    
+    //インフォメーション
+    #information {
+      h2 {
+        width: auto;
+        margin: 100px auto 30px 5%;
+      }
+    }
+    
+    
+    //コンタクト
+    #contact {
+      h2 {
+        margin-bottom: 50px;
+      }
+      .container {
+        .item {
+          margin-bottom: 20px;
+        }
+        .inner {
+          display: block;
+          text-align: center;
+          img {
+            margin-right: 0;
+          }
+          address {
+            font-size: 18px;
+          }  
+        }
+      }
+      p {
+        margin-top: 10px;
+        line-height: 2em;
+        .rp-br {
+          display: block;
+        }
+      }
+    }
+    
+    
+    //メニュー
+    .menu {
+      .menu-image {
+        width: 90%;
+        img {
+          width: 100%;
+        }
+      }
+      .box {
+        width: 10%;
+        height: 50px;
+        left: 90%;
+      }
+      .inner {
+        h2 {
+          margin-bottom: 10px;
+        }
+        p {
+          margin-bottom: 30px;
+        }
+        .item {
+          width: 95%;
+          margin: 0 auto;
+        }
+        ul {
+          margin-bottom: 40px;
+        }
+      }
+      .inner.on {
+        opacity: 1;
+      }
+    }
+    
+    //スタッフ
+    #staff {
+      h2 {
+        margin-bottom: 50px;
+      }
+      .container {
+        .item {
+          width: 100%;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    
+    
+    //アクセス
+    .access {
+      margin-bottom: 20px;
+      .access-image {
+        width: 90%;
+        left: 10%;
+        img {
+          width: 100%;
+          margin-bottom: 50px;
+        }
+      }
+      .inner {
+        h2 {
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+
+
+
+  //フッター
+  footer {
+    height: 250px;
+    img {
+      top: 100px;
+    }
+    .fa-instagram {
+      top: 115px;
+    }
+    p {
+      top: 170px;
+    }
+  }
+
+
+
+}

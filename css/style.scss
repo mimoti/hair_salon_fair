@@ -247,6 +247,9 @@ header {
 		}
 		p {
 			text-align: center;
+			.rp-br {
+				display: none;
+			}
 		}
 	}
 	#contact.on {
@@ -393,26 +396,4 @@ footer {
 		color: #fff;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

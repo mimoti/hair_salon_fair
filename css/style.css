@@ -291,6 +291,10 @@ header .is-fixed {
   text-align: center;
 }
 
+.main #contact p .rp-br {
+  display: none;
+}
+
 .main #contact.on {
   opacity: 1;
 }
