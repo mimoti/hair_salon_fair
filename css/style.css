@@ -113,6 +113,10 @@ header .is-fixed {
   height: calc(100vh - 100px);
 }
 
+.sliderbox .sp-size {
+  display: none;
+}
+
 /*スクロールダウン全体の場所*/
 .scrolldown {
   /*描画位置*/

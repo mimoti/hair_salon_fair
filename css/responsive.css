@@ -4,6 +4,7 @@
     display: none;
   }
   header {
+    height: 80px;
     position: relative;
   }
   header .humberger {
@@ -55,7 +56,7 @@
     top: 0;
     right: -120%;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     z-index: 998;
     -webkit-transition: all 0.6s;
@@ -84,10 +85,11 @@
     height: 80px;
   }
   header .container h1 {
-    margin: 20px 0 0 20px;
+    margin: 6% 0 0 5%;
   }
   header .container h1 img {
     height: 60%;
+    width: auto;
   }
   header .container p {
     display: none;
@@ -101,6 +103,12 @@
   }
   .sliderbox img {
     height: calc(100vh - 80px);
+  }
+  .sliderbox .pc-size {
+    display: none;
+  }
+  .sliderbox .sp-size {
+    display: block;
   }
   /*スクロールダウン全体の場所*/
   .scrolldown {
