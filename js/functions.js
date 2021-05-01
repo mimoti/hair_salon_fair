@@ -70,3 +70,17 @@ $(function() {
   });
   
 });
+
+$(function() {
+  $('.humberger-button').click(function(){
+    $('.humberger-button1').toggleClass('is-active');
+    $('.humberger-button2').toggleClass('is-active');
+    $('.humberger-contents').toggleClass('is-active');
+  });
+
+  $('.humberger-contents a').click(function () {//ナビゲーションのリンクがクリックされたら
+    $('.humberger-button1').removeClass('is-active');//ボタンの is-activeクラスを除去し
+    $('.humberger-button2').removeClass('is-active');//ボタンの is-activeクラスを除去し
+    $('.humberger-contents').removeClass('is-active');//ナビゲーションのis-activeクラスも除去
+});
+});

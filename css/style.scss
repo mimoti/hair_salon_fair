@@ -55,8 +55,13 @@ p {
 
 
 //ヘッダー
+
+
 header {
 	position: relative;
+	.humberger {
+		display: none;
+	}	
 	.container {
 		display: flex;
 		.box {

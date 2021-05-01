@@ -58,6 +58,10 @@ header {
   position: relative;
 }
 
+header .humberger {
+  display: none;
+}
+
 header .container {
   display: -webkit-box;
   display: -ms-flexbox;
