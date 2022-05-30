@@ -76,6 +76,7 @@ $(function() {
     $('.humberger-button1').toggleClass('is-active');
     $('.humberger-button2').toggleClass('is-active');
     $('.humberger-contents').toggleClass('is-active');
+    $('body').toggleClass('block');
   });
 
   $('.humberger-contents a').click(function () {//ナビゲーションのリンクがクリックされたら
