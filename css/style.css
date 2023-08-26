@@ -92,10 +92,15 @@ header .nav {
   left: 60px;
   top: 100px;
   padding-top: 60px;
+  mix-blend-mode: difference;
 }
 
 header .nav li {
   margin-bottom: 40px;
+}
+
+header .nav a {
+  mix-blend-mode: difference;
 }
 
 header .is-fixed {

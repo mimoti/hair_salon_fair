@@ -1,5 +1,7 @@
 // JavaScript Document
 
+
+//slickスライドショー
 $(function() {
 	$('.slideshow').slick({
 		autoplay: true,
@@ -11,6 +13,7 @@ $(function() {
 	});
 });
 
+//PC表示時ナビゲーションを左に固定（ナビがtopに来たら固定）
 $(function() {
   var $win = $(window),
       $main = $('main'),
@@ -31,6 +34,7 @@ $(function() {
   });
 });
 
+//リンク（ページ内遷移）クリックで自動スクロール
 $(function(){
   $('a[href^="#"]').click(function(){
     let speed = 500;
@@ -42,6 +46,7 @@ $(function(){
   });
 });
 
+//カーソルをクリックできる場所の上に持ってきたらカーソル拡大
 $(function() {
   var
   cursor = $(".cursor"),
@@ -71,17 +76,20 @@ $(function() {
   
 });
 
+//ハンバーガーメニュークリックでクラス名付与とbody固定
 $(function() {
+  var pos = $(window).scrollTop();
+
   $('.humberger-button').click(function(){
-    $('.humberger-button1').toggleClass('is-active');
-    $('.humberger-button2').toggleClass('is-active');
+    $(this).toggleClass('is-active');
     $('.humberger-contents').toggleClass('is-active');
-    $('body').toggleClass('block');
+    $("body").toggleClass('is-fixed').css({'top': pos});
+
   });
 
   $('.humberger-contents a').click(function () {//ナビゲーションのリンクがクリックされたら
-    $('.humberger-button1').removeClass('is-active');//ボタンの is-activeクラスを除去し
-    $('.humberger-button2').removeClass('is-active');//ボタンの is-activeクラスを除去し
+    $('.humberger-button').removeClass('is-active');//ボタンの is-activeクラスを除去し
     $('.humberger-contents').removeClass('is-active');//ナビゲーションのis-activeクラスも除去
-});
+    $("body").removeClass('is-fixed').css({'top':0});
+  });
 });
